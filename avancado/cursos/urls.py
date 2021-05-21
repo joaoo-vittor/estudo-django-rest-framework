@@ -30,4 +30,5 @@ urlpatterns = [
          AvaliacaoAPIView.as_view(), name='curso_avaliacao'),
     path('cursos/<int:curso_pk>/avaliacoes/',
          AvaliacoesAPIView.as_view(), name='curso_avaliacoes'),
+
 ]

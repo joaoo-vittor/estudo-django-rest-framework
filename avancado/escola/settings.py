@@ -8,6 +8,10 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
+
+joao Token 9345907bf6bd74254cd520cae163b71847907909
+teste Token 753748618edb82228ad53f324dea66b0052d7e6f
+
 """
 
 import os
@@ -41,6 +45,7 @@ INSTALLED_APPS = [
 
     'django_filters',
     'rest_framework',
+    'rest_framework.authtoken',
 
     'cursos',
 ]
@@ -139,7 +144,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     # pode ter mais de um tipo de autenticação
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',  # Autenticação via Token
     ),
     # pode ter mais de um tipo de permissão
     'DEFAULT_PERMISSION_CLASSES': (
