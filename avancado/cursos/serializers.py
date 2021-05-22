@@ -25,6 +25,13 @@ class AvaliacaoSerializer(serializers.ModelSerializer):
             'ativo',
         )
 
+    #   validate_<nome do CAMPO> Padrão do Serializer
+    def validate_avaliacao(self, value):
+        if value in range(1, 6):
+            return value
+        raise serializers.ValidationError(
+            'Avaliação precisa ser um interio entra 1 e 5.')
+
 
 class CursoSerializer(serializers.ModelSerializer):
     # Nested Relationship
